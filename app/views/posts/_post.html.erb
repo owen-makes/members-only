@@ -1,5 +1,6 @@
-  <% @posts.each do |p| %>
+  <% @post.each do |p| %>
     <div id="post-card">
-      <%= render p %>
+      <%= p.body %>
+      <%= "Member ##{p.user_id}" %>
     </div>
   <% end %>

@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   def new
-    @posts = Post.new
+    @post = Post.new
   end
 
   def create
-    @posts = Post.new(post_params)
+    @post = current_user.posts.build(post_params) # Automatically set user_id
 
-    if @posts.save
+    if @post.save
       flash[:success] = "Post succesfully created"
       redirect_to :root
     else

@@ -20,6 +20,9 @@
 
   <body>
     <main class="bg-black container mx-auto mt-28 px-5">
+      <% flash.each do |name, message| %>
+        <div class="<%= name %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </main>
   </body>
