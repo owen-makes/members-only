@@ -21,9 +21,13 @@
   <body class="bg-gray-900 text-white min-h-screen">
     <div class="w-full flex justify-between items-center">
       <%= link_to "Members Only", posts_path, method: :get, class: 'font-bold text-5xl text-white m-5' %>
-      <div class="m-5 font-bold"><%= "Welcome, #{current_user.name} :)"%></div>
+      <% if user_signed_in? %>
+        <div class="m-5 font-bold">
+          <%= "Welcome, #{current_user.name} :)"%>
+        </div>
+      <% end %>
     </div>
-    <main class="w-full mx-auto mt-5 px-5 grid">
+    <main class="w-full mx-auto mt-5 px-5">
       <% flash.each do |name, message| %>
         <div class="<%= name %>"><%= message %></div>
       <% end %>

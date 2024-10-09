@@ -1,9 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl text-white">New Post</h1>
-  <div class="flex-col">
+<h1 class="text-2xl font-bold text-white mb-4">New Post</h1>
+  <div class="container flex flex-col justify-start content-center h-screen">
     <%= form_with model:@post, url: posts_path do |f| %>
-      <%= f.text_area :body, class: 'bg-gray-700 rounded' %>
-      <%= f.submit "Post", class: 'bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded' %>
+      <%= f.text_area :body, class: 'bg-gray-700 w-52 resize-none rounded' %>
+      <%= f.submit "Post", class: 'bg-gray-700 px-4 py-2 text-gray-100 rounded' %>
     <% end %>
   </div>
-</div>
