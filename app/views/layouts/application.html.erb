@@ -18,8 +18,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="bg-black container mx-auto mt-28 px-5">
+  <body class="prose bg-gray-900 text-white grid-cols-2">
+    <h1 class="font-bold text-5xl text-white m-5">Members Only</h1>
+    <main class="container mx-auto mt-28 px-5 grid">
       <% flash.each do |name, message| %>
         <div class="<%= name %>"><%= message %></div>
       <% end %>

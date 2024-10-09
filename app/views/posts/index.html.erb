@@ -1,16 +1,15 @@
 <div>
-  <h1 class="font-bold text-5xl">Members Only</h1>
-  <h3>Welcome to our forum</h2>
+  <h3 class="text-white">Welcome to our forum</h2>
   <div class="p-2 m-2.5">
     <%= render "post" %>
   </div>
 </div>
-<div>
+<div class="flex gap-4">
   <% if user_signed_in? %>
-    <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-    <%= button_to "New Post", new_post_path, method: :get %>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded" %>
+    <%= button_to "New Post", new_post_path, method: :get, class: "bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded" %>
   <% else %>
-    <%= button_to 'Log in', new_user_session_path %>
-    <%= button_to 'Sign up', new_user_registration_path %>
+    <%= button_to 'Log in', new_user_session_path, class: "bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded" %>
+    <%= button_to 'Sign up', new_user_registration_path, method: :get, class: "bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded" %>
   <% end %>
 </div>

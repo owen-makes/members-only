@@ -1,7 +1,9 @@
 <div>
-  <h1 class="font-bold text-4xl">New Post</h1>
-  <%= form_with model:@post, url: posts_path do |f| %>
-    <%= f.text_area :body %>
-    <%= f.submit("Post") %>
-  <% end %>
+  <h1 class="font-bold text-4xl text-white">New Post</h1>
+  <div class="flex-col">
+    <%= form_with model:@post, url: posts_path do |f| %>
+      <%= f.text_area :body, class: 'bg-gray-700 rounded' %>
+      <%= f.submit "Post", class: 'bg-gray-700 px-4 py-2 text-gray-100 my-4 rounded' %>
+    <% end %>
+  </div>
 </div>

@@ -1,6 +1,10 @@
   <% @post.each do |p| %>
-    <div id="post-card">
+    <div id="post-card" class="bg-gray-600 rounded my-4 px-3 py-5">
       <%= p.body %>
-      <%= "Member ##{p.user_id}" %>
+      <div class="font-bold text-1xl">
+        <% if user_signed_in? %>
+          <%="by #{User.find(p.user_id).name} (##{p.user_id})"%>
+        <% end %>  
+      </div>
     </div>
   <% end %>
