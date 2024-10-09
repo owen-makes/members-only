@@ -18,9 +18,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="prose bg-gray-900 text-white grid-cols-2">
-    <h1 class="font-bold text-5xl text-white m-5">Members Only</h1>
-    <main class="container mx-auto mt-28 px-5 grid">
+  <body class="bg-gray-900 text-white min-h-screen">
+    <div class="w-full flex justify-between items-center">
+      <%= link_to "Members Only", posts_path, method: :get, class: 'font-bold text-5xl text-white m-5' %>
+      <div class="m-5 font-bold"><%= "Welcome, #{current_user.name} :)"%></div>
+    </div>
+    <main class="w-full mx-auto mt-5 px-5 grid">
       <% flash.each do |name, message| %>
         <div class="<%= name %>"><%= message %></div>
       <% end %>
